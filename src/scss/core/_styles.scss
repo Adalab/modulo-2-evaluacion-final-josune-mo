@@ -1,0 +1,6 @@
+@use '../core/variables' as vars;
+
+// General styles
+body {
+    font-family: vars.$font-family;
+}

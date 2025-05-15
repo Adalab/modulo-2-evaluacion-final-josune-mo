@@ -14,11 +14,11 @@ let products = [];
 function renderProducts (products) {
 
     for (let product of products) {
-    productsList.innerHTML += `<li>
-    <img src=${product.image}>
-    <h2>${product.title}</h2>
-    <p>${product.price}€</p>
-    <button>Comprar</button>
+    productsList.innerHTML += `<li class='product'>
+    <img class='img-products-list'src=${product.image}>
+    <h2 class='product-title'>${product.title}</h2>
+    <p class='product-price'>${product.price}€</p>
+    <button class='btn-purchase'>Purchase</button>
     </li>`
 }
 }

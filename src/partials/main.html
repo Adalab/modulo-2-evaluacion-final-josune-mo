@@ -1,16 +1,18 @@
 <main class="page__main">
     <section>
-        <form>
-            <input type="text" class="js-input" placeholder="Example: Women">
-            <button class="js-btn">Find</button>
+        <form class="js-form form-container">
+            <input type="text" class="js-input inputFind" placeholder="Example: Women">
+            <button class="js-btn btn-find">Find</button>
         </form>
     </section>
-    <section>
-        <p>Shopping Cart</p>
-        <ul class="js-shopping-cart"></ul>
-    </section>
-    <section>
-        <p>Most popular products</p>
-        <ul class="js-products-list"></ul>
+    <section class="main__sections">
+        <article class="section__cart">
+        <p>Shopping Cart 🛒</p>
+        <ul class="js-shopping-cart shopping-cart"></ul>
+        </article>
+        <article class="section__products">
+        <p>Most popular products 🛍️</p>
+        <ul class="js-products-list products-list"></ul>
+        </article>
     </section>
 </main>

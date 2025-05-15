@@ -1,4 +1,6 @@
 @use 'core/reset';
-@use 'layout/page';
+@use 'core/variables';
+@use 'core/styles';
+@use 'layout/main';
 @use 'layout/header';
 @use 'layout/footer';
