@@ -97,3 +97,14 @@
     color: vars.$color-primary;
     border: none;
 }
+
+.btn-purchase-click {
+    padding: 0.5rem 0.5rem;
+    border-radius: 0.5rem;
+    font-family: vars.$font-family;
+    font-size: 0.7rem;
+    background-color: vars.$color-primary;
+    color: vars.$color-secondary;
+    border: none;
+
+}
