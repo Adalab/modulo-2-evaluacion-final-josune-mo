@@ -1,10 +1,10 @@
 'use strict';
 
 //Constantes
-const shoppingCart = document.querySelector(".js-shopping-cart");
-const productsList = document.querySelector(".js-products-list");
-const input = document.querySelector(".js-input");
-const btnFind = document.querySelector(".js-btn-find");
+const shoppingCart = document.querySelector('.js-shopping-cart');
+const productsList = document.querySelector('.js-products-list');
+const input = document.querySelector('.js-input');
+const btnFind = document.querySelector('.js-btn-find');
 const url = "https://fakestoreapi.com/products";
 
 //Variables
@@ -25,12 +25,12 @@ function renderProducts(products) {
     <img class='img-products-list'src=${product.image}>
     <h2 class='product-title'>${product.title}</h2>
     <p class='product-price'>${product.price}€</p>
-    <button class='btn-purchase' id='${product.id}'>Purchase</button>
+    <button class='btn-add' id='${product.id}'>Add</button>
     </li>`;
   }
-  const btnsPurchase = document.querySelectorAll(".btn-purchase");
-  for (let btnPurchase of btnsPurchase) {
-    btnPurchase.addEventListener("click", handleClickPurchase);
+  const btnsAdd = document.querySelectorAll('.btn-add');
+  for (let btnAdd of btnsAdd) {
+    btnAdd.addEventListener('click', handleClickAdd);
   }
 }
 
@@ -41,7 +41,12 @@ function renderCart() {
     <img class='img-products-list'src=${productInCart.image}>
     <h2 class='product-title'>${productInCart.title}</h2>
     <p class='product-price'>${productInCart.price}€</p>
+    <button class='btn-delete' id='${productInCart.id}'>❌</button>
     </li>`;
+  }
+    const btnsDelete = document.querySelectorAll('.btn-delete');
+  for (let btnDelete of btnsDelete) {
+    btnDelete.addEventListener('click', handleClickDelete);
   }
 }
 
@@ -55,15 +60,25 @@ function handleClickFind(event) {
   renderProducts(inputProducts);
 }
 
-function handleClickPurchase(event) {
-  const btnPurchaseClick = event.target;
-  const btnPurchaseClickId = parseInt(event.target.id);
-  btnPurchaseClick.classList.add("btn-purchase-click");
-  btnPurchaseClick.innerHTML = "Delete";
+function handleClickAdd(event) {
+  const btnAddClick = event.target;
+  const btnAddClickId = parseInt(event.target.id);
+  btnAddClick.classList.add('btn-add-click');
+  btnAddClick.innerHTML = 'Delete';
   const productToAdd = products.find(
-    (product) => product.id === btnPurchaseClickId
+    (product) => product.id === btnAddClickId
   );
   cart.push(productToAdd);
+  localStorage.setItem('shoppingCart', JSON.stringify(cart));
+  renderCart();
+}
+
+function handleClickDelete(event) {
+ const btnDeleteClickId = parseInt(event.target.id); 
+ const productToDelete = cart.filter(
+    (product) => product.id === btnDeleteClickId
+  );
+  cart.shift(productToDelete);
   localStorage.setItem('shoppingCart', JSON.stringify(cart));
   renderCart();
 }
