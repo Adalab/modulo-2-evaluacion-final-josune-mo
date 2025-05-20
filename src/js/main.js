@@ -47,7 +47,7 @@ function renderCart() {
   const btnsDelete = document.querySelectorAll(".btn-delete");
   for (let btnDelete of btnsDelete) {
     btnDelete.addEventListener("click", handleClickDelete);
-  btnAddDelete();
+    btnAddDelete();
   }
 }
 
@@ -79,9 +79,10 @@ function handleClickFind(event) {
 }
 
 function handleClickAdd(event) {
-/* const btnAddClick = event.target;  */
   const btnAddClickId = parseInt(event.target.id);
-  const noProductMatches = !cart.some((product) => product.id === btnAddClickId);
+  const noProductMatches = !cart.some(
+    (product) => product.id === btnAddClickId
+  );
   if (noProductMatches) {
     const productToAdd = products.find(
       (product) => product.id === btnAddClickId
