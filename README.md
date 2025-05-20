@@ -1,6 +1,6 @@
 # Online Store JMA
 
-🚀 ## Cómo arrancar el proyecto
+Cómo arrancar el proyecto
 
 Sigue los siguientes pasos para arrancar el proyecto en tu navegador: 
 
